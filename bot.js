@@ -62,11 +62,7 @@ client.on("message", (message) => {
           message.channel.sendEmbed(mrx);
           const embed = new Discord.RichEmbed()
           .setColor(0xCF40FA)
-          .addField(`Hello ${message.author.username}!`, `=============================
-Why Open The Ticket :
-=============================
-Mention Support Team :
-=============================`)
+          .addField(`Hello ${message.author.username}!`, `Ticket HT Server`)
           .setTimestamp();
           c.send({ embed: embed });
       }).catch(console.error);
