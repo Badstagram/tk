@@ -39,7 +39,7 @@ client.on("message", (message) => {
       const reason = message.content.split(" ").slice(1).join(" ");
       if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`هذا السيرفر ليس لديه \`Support Team\` صنع رتبة, لذلك لن يتم فتح التذكرة.\nاذا كنت تمتلك administrator, إنشاء اسم بهذا الاسم بالضبط وإعطائه للمستخدمين الذين يمكنهم مشاهدة التذاكر.`);
       if (message.guild.channels.exists("name", "ticket-" + message.author.id)) return message.channel.send(`انت بالفعل لديك تذكره مفتوحه.`);
-      message.guild.createChannel(`ticket-HTServer`, "text").then(c => {
+      message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
           let role = message.guild.roles.find("name", "Support Team");
           let role2 = message.guild.roles.find("name", "@everyone");
           c.overwritePermissions(role, {
