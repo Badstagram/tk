@@ -9,7 +9,6 @@ function clean(text) {
 }
 
 const prefix = "-";
-const token = "(process.env.BOT_TOKEN);";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
