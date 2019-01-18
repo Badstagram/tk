@@ -38,7 +38,7 @@ client.on("message", (message) => {
   if (message.content.toLowerCase().startsWith(prefix + `new`)) {
       const reason = message.content.split(" ").slice(1).join(" ");
       if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`هذا السيرفر ليس لديه \`Support Team\` صنع رتبة, لذلك لن يتم فتح التذكرة.\nاذا كنت تمتلك administrator, إنشاء اسم بهذا الاسم بالضبط وإعطائه للمستخدمين الذين يمكنهم مشاهدة التذاكر.`);
-      if (message.guild.channels.exists("name", "ticket-" + message.author.username)) return message.channel.send(`انت بالفعل لديك تذكره مفتوحه.`);
+      if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`انت بالفعل لديك تذكره مفتوحه.`);
       message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
           let role = message.guild.roles.find("name", "Support Team");
           let role2 = message.guild.roles.find("name", "@everyone");
@@ -57,7 +57,7 @@ client.on("message", (message) => {
           let mrx = new Discord.RichEmbed()
           .setColor('RANDOM')
           .setAuthor(message.author.tag,message.author.avatarURL)
-          .setDescription(`:white_check_mark: تم إنشاء تذكرتك`);
+          .setDescription(`:white_check_mark: تم إنشاء تذكرتك, `);
           .setTimestamp()
           message.channel.sendEmbed(mrx);
           const embed = new Discord.RichEmbed()
