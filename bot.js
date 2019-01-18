@@ -57,7 +57,7 @@ client.on("message", (message) => {
           let mrx = new Discord.RichEmbed()
           .setColor('RANDOM')
           .setAuthor(message.author.tag,message.author.avatarURL)
-          .setDescription(`:white_check_mark: تم إنشاء تذكرتك, `);
+          .setDescription(`:white_check_mark: تم إنشاء تذكرتك, #${c.name}.`);`);
           .setTimestamp()
           message.channel.sendEmbed(mrx);
           const embed = new Discord.RichEmbed()
