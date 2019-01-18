@@ -28,12 +28,7 @@ client.on('ready', () => {
 client.on("message", (message) => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
   
-  
-    if (message.content.toLowerCase().startsWith(prefix + `ping`)) {
-      message.channel.send(`Hoold on!`).then(m => {
-      m.edit(`:ping_pong: Wew, made it over the ~waves~ ! **Pong!**\nMessage edit time is ` + (m.createdTimestamp - message.createdTimestamp) + `ms, Discord API heartbeat is ` + Math.round(client.ping) + `ms.`);
-      });
-  }
+
   
   if (message.content.toLowerCase().startsWith(prefix + `new`)) {
       const reason = message.content.split(" ").slice(1).join(" ");
@@ -88,19 +83,6 @@ client.on("message", (message) => {
       });
   }
   
-  });
-  
-  client.on('message', message => {
-      if (message.content.startsWith(prefix + 'about')) {
-      if (message.author.bot) return
-      if (!message.guild) return message.reply('**:x: This Command Only In Server**')
-      let embed = new Discord.RichEmbed()
-      .setColor('RANDOM')
-      .setTitle(':mailbox_with_mail: about')
-      .setDescription(`I am ${client.user.username}, and I will try my best to help everyone! If I am in a discord server, people can use me to create tickets in order`)
-      .setFooter(`${client.user.username}`)
-      message.author.sendEmbed(embed)
-      }
   });
   
 
