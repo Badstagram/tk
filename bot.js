@@ -13,7 +13,7 @@ const token = "(process.env.BOT_TOKEN);";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
-  client.user.setGame(`KB | ${prefix}new`,"https://www.twitch.tv/v5bz")
+  client.user.setGame(`Legit | ${prefix}new`,"https://www.twitch.tv/v5bz")
 });
 
 
