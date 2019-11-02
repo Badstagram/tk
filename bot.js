@@ -30,4 +30,4 @@ songinstatus=false
 
 
 
-client.login("NTI4NjY4NzkxNjQ3NzY0NTAy.Xb1-Yw.lICtHubudvTCY7UgSJUHd3p99pk");
+client.login(process.env.BOT_TOKEN);
